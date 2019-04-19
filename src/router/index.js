@@ -1,7 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/views/Home";
+import Login from "@/views/Login";
+import NotFound from "@/views/404";
+import Nprogress from "nprogress";
+import "nprogress/nprogress.css";
 Vue.use(Router);
+
 const IndexRoute = {
   path: "/",
   component: Home,
@@ -12,7 +17,12 @@ let routes = [
   IndexRoute,
   {
     path: "*",
-    redirect: "/"
+    name: "404",
+    component: NotFound
+  },
+  {
+    path: "/login",
+    component: Login
   }
 ];
 
@@ -30,8 +40,20 @@ routerContext.keys().forEach(route => {
     ...(routerModule.default || routerModule)
   ];
 });
-export default new Router({
+
+let router = new Router({
   mode: "history",
+  scrollBehavior: () => ({ y: 0 }),
   base: process.env.BASE_URL,
   routes
 });
+
+router.beforeEach((to, from, next) => {
+  Nprogress.start();
+  next();
+});
+
+router.afterEach(() => {
+  Nprogress.done();
+});
+export default router;
