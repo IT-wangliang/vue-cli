@@ -1,7 +1,7 @@
 import lazyLoading from "@/router/lazyLoading";
 export default [
   {
-    path: "/modalA",
-    component: lazyLoading("modalA", true)
+    path: "/menuA",
+    component: lazyLoading("menuA", true)
   }
 ];

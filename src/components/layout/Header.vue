@@ -1,9 +1,22 @@
 <template>
-  <div>头部</div>
+  <div class="header">LOGO</div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Header",
+  data() {
+    return {};
+  }
+};
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.header {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+}
+</style>

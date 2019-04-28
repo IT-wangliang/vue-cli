@@ -9,6 +9,7 @@ Vue.use(Router);
 
 const IndexRoute = {
   path: "/",
+  name: "Home",
   component: Home,
   children: []
 };
@@ -22,6 +23,7 @@ let routes = [
   },
   {
     path: "/login",
+    name: "登录",
     component: Login
   }
 ];
