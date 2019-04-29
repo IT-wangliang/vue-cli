@@ -3,7 +3,7 @@
     <Header></Header>
     <a-layout id="components-layout-demo-side">
       <a-layout-sider v-model="collapsed">
-        <SlideMenu></SlideMenu>
+        <SlideMenu :collapsed="collapsed"></SlideMenu>
       </a-layout-sider>
       <a-layout>
         <a-layout-content style="margin: 0 16px">
@@ -33,9 +33,7 @@ export default {
     SlideMenu,
     Breadcrumb
   },
-  created() {
-    console.log(this.$router.options.routes);
-  },
+  created() {},
   data() {
     return {
       collapsed: false

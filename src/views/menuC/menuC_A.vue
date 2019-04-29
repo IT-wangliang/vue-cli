@@ -1,10 +1,10 @@
 <template>
-  <div>modalB_B</div>
+  <div>modalB_A</div>
 </template>
 
 <script>
 export default {
-  name: "modalB_B"
+  name: "modalB_A"
 };
 </script>
 
