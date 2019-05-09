@@ -57,11 +57,9 @@ export default {
       }
     };
   },
-  mounted() {},
+  computed: {},
   methods: {
-    handleChartClick(data) {
-      console.log(data);
-    }
+    handleChartClick(data) {}
   }
 };
 </script>

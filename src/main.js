@@ -3,11 +3,12 @@ import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.less";
 import App from "./App.vue";
 import router from "./router/index";
-import store from "./store";
+import store from "./store/index";
 // 自动化注册全局组件
 import "./components/index";
 // 注册指令
 import directive from "./libs/directives";
+// 注册过滤器
 import filters from "./libs/filters";
 
 Vue.config.productionTip = false;
