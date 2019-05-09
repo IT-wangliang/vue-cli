@@ -5,19 +5,17 @@
       <a-layout-sider v-model="collapsed">
         <SlideMenu :collapsed="collapsed"></SlideMenu>
       </a-layout-sider>
-      <a-layout>
-        <a-layout-content style="margin: 0 16px">
-          <div style="display:flex;align-items: center;">
-            <a-icon
-              :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-              @click="collapsed = !collapsed"
-              class="trigger"
-            ></a-icon>
-            <Breadcrumb></Breadcrumb>
-          </div>
-          <router-view></router-view>
-        </a-layout-content>
-      </a-layout>
+      <a-layout-content style="margin: 0 16px">
+        <div style="display:flex;align-items: center;">
+          <a-icon
+            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+            @click="collapsed = !collapsed"
+            class="trigger"
+          ></a-icon>
+          <Breadcrumb></Breadcrumb>
+        </div>
+        <router-view class="view"></router-view>
+      </a-layout-content>
     </a-layout>
   </div>
 </template>
@@ -46,6 +44,11 @@ export default {
 #home {
   height: 100%;
 }
+.view {
+  padding: 10px;
+  height: calc(100% - 65px);
+  background-color: #fff;
+}
 #components-layout-demo-side {
   height: calc(100% - 60px);
 }
@@ -58,5 +61,9 @@ export default {
     background-color: #fff;
     color: #1890ff;
   }
+}
+.ant-layout,
+.ant-layout-content {
+  height: 100%;
 }
 </style>
