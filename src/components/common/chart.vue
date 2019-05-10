@@ -13,7 +13,8 @@ export default {
     },
     height: {
       type: String,
-      default: "100%"
+      default: "100%",
+      required: true
     },
     option: {
       type: Object,

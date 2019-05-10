@@ -20,7 +20,6 @@
     <chart
       :option="chartOption"
       height="500px"
-      width="500px"
       @click="handleChartClick"
     ></chart>
   </div>
@@ -59,7 +58,9 @@ export default {
   },
   computed: {},
   methods: {
-    handleChartClick(data) {}
+    handleChartClick(data) {
+      console.log(data);
+    }
   }
 };
 </script>

@@ -1,9 +1,11 @@
 import { fetch, fetchPost, uploadFile } from "./api.js";
-import types from "../mutation-types";
+// eslint-disable-next-line
+import types from '../mutation-types';
 import paths from "../paths";
 import { message } from "ant-design-vue";
 
 // 返回 status 处理
+// eslint-disable-next-line
 const receiveSuccess = ({ commit }, { res }) => {
   if (res.status === 1) {
     return Promise.resolve(res);
@@ -14,6 +16,7 @@ const receiveSuccess = ({ commit }, { res }) => {
     return Promise.reject(res.msg);
   }
 };
+
 // 合并 get、post
 export const fetchData = ({ commit, dispatch }, { url, method, params }) => {
   let path = url in paths ? paths[url] : url;
@@ -52,6 +55,7 @@ export const fetchData = ({ commit, dispatch }, { url, method, params }) => {
       });
   }
 };
+
 // 文件上传
 export const upload = ({ commit, dispatch }, { url, params }) => {
   let path = url in paths ? paths[url] : url;
