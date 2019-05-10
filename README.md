@@ -1,5 +1,3 @@
-# Antd Design Vue
-
 ## Project setup
 
 ```
