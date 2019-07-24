@@ -1,22 +1,19 @@
 <template>
   <div id="home">
-    <Header></Header>
-    <a-layout id="components-layout-demo-side">
-      <a-layout-sider v-model="collapsed">
-        <SlideMenu :collapsed="collapsed"></SlideMenu>
-      </a-layout-sider>
-      <a-layout-content style="margin: 0 16px">
-        <div style="display:flex;align-items: center;">
-          <a-icon
-            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            @click="collapsed = !collapsed"
-            class="trigger"
-          ></a-icon>
+    <el-container style="height:100%">
+      <el-header height="100px">
+        <Header></Header>
+      </el-header>
+      <el-container style="height:calc(100% - 100px)">
+        <el-aside width="auto">
+          <SlideMenu></SlideMenu>
+        </el-aside>
+        <el-main>
           <Breadcrumb></Breadcrumb>
-        </div>
-        <router-view class="view"></router-view>
-      </a-layout-content>
-    </a-layout>
+          <router-view class="routerView"></router-view>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -30,40 +27,29 @@ export default {
     Header,
     SlideMenu,
     Breadcrumb
-  },
-  created() {},
-  data() {
-    return {
-      collapsed: false
-    };
   }
 };
 </script>
 
 <style lang="less" scoped>
-#home {
+#home,
+.routerView {
   height: 100%;
 }
-.view {
-  padding: 10px;
-  height: calc(100% - 65px);
-  background-color: #fff;
+.el-header {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-#components-layout-demo-side {
-  height: calc(100% - 60px);
+.el-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
-.trigger {
-  font-size: 20px;
-  padding: 0 15px;
-  line-height: 53px;
-  cursor: pointer;
-  &:hover {
-    background-color: #fff;
-    color: #1890ff;
-  }
+.el-aside {
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.ant-layout,
-.ant-layout-content {
-  height: 100%;
+.el-main {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 </style>

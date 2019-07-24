@@ -3,8 +3,9 @@ export default [
   {
     name: "菜单B",
     path: "/menuB",
+    redirect: "/menuB/menuB_A",
     meta: {
-      icon: "setting"
+      icon: "share"
     },
     component: { render: h => h("router-view") },
     children: [

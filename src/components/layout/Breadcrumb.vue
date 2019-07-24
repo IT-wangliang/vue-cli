@@ -1,11 +1,9 @@
 <template>
-  <div class="breadcrumb">
-    <a-breadcrumb style="margin: 16px 0">
-      <a-breadcrumb-item v-for="item in levelList" :key="item.path">{{
-        item.name
-      }}</a-breadcrumb-item>
-    </a-breadcrumb>
-  </div>
+  <el-breadcrumb separator-class="el-icon-arrow-right">
+    <el-breadcrumb-item v-for="(item, index) in levelList" :key="index">{{
+      item.name
+    }}</el-breadcrumb-item>
+  </el-breadcrumb>
 </template>
 
 <script>
@@ -26,12 +24,10 @@ export default {
   },
   methods: {
     getBreadcrumb() {
-      let matched = this.$route.matched.filter(item => item.name);
+      let matched = this.$route.matched;
       matched.shift();
       this.levelList = matched;
     }
   }
 };
 </script>
-
-<style></style>

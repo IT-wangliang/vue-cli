@@ -1,5 +1,5 @@
 <template>
-  <div class="header">LOGO</div>
+  <div class="header">全维感知综合研判平台</div>
 </template>
 
 <script>
@@ -13,8 +13,8 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  height: 60px;
-  line-height: 60px;
+  height: 100px;
+  line-height: 100px;
   text-align: center;
   font-size: 25px;
   font-weight: 700;

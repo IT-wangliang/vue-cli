@@ -4,7 +4,7 @@ export default [
     name: "菜单A",
     path: "/menuA",
     meta: {
-      icon: "setting"
+      icon: "edit"
     },
     component: lazyLoading("menuA", true)
   }

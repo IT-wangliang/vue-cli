@@ -21,6 +21,7 @@ export default {
     return `import lazyLoading from "@/router/lazyLoading";
 export default [
   {
+    name: "${compoenntName}",
     path: "/${compoenntName}",
     component: lazyLoading("${compoenntName}", true)
   }

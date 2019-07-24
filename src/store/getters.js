@@ -1,4 +1,4 @@
-const pickerOptions = state => {
+const pickerOptions = () => {
   return {
     shortcuts: [
       {
