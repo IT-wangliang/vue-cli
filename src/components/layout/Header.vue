@@ -1,12 +1,19 @@
 <template>
-  <div class="header">全维感知综合研判平台</div>
+  <div class="header">{{ title }}</div>
 </template>
 
 <script>
 export default {
   name: "Header",
   data() {
-    return {};
+    return {
+      title: document.title || "全维感知综合研判平台"
+    };
+  },
+  watch: {
+    $route() {
+      this.title = document.title;
+    }
   }
 };
 </script>

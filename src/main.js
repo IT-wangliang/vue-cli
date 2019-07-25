@@ -1,5 +1,8 @@
 import Vue from "vue";
 import {
+  Message,
+  MessageBox,
+  Loading,
   Icon,
   Container,
   Header,
@@ -15,41 +18,68 @@ import {
   Select,
   Radio,
   RadioGroup,
-  RadioButton
+  RadioButton,
+  Input,
+  Form,
+  FormItem,
+  Tooltip,
+  DatePicker
 } from "element-ui";
 import App from "./App.vue";
 import router from "./router/index";
 import store from "./store/index";
-import "./assets/style/base.css";
-// 自动化注册全局组件
-import "./components/index";
+import "@/assets/font/iconfont";
+import "@/assets/style/base.css";
+// 注册全局组件
+import "@/components/index";
 // 注册指令
-import directive from "./libs/directives";
+import directive from "@/libs/directives";
 // 注册过滤器
-import filters from "./libs/filters";
-
-Vue.config.productionTip = false;
+import filters from "@/libs/filters";
+import Axios from "@/service/request";
+import moment from "moment";
+moment.locale("zh-CN");
+const eleComponentArr = [
+  Icon,
+  Container,
+  Header,
+  Aside,
+  Main,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Select,
+  Radio,
+  RadioGroup,
+  RadioButton,
+  Input,
+  Form,
+  FormItem,
+  Tooltip,
+  DatePicker
+];
+for (const item of eleComponentArr) {
+  Vue.use(item);
+}
 
 Vue.use(directive);
 Vue.use(filters);
+Vue.prototype.$loading = Loading.service;
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$notify = Notification;
+Vue.prototype.$message = Message;
 
-Vue.use(Icon);
-Vue.use(Container);
-Vue.use(Header);
-Vue.use(Aside);
-Vue.use(Main);
-Vue.use(Menu);
-Vue.use(Submenu);
-Vue.use(MenuItem);
-Vue.use(MenuItemGroup);
-Vue.use(Breadcrumb);
-Vue.use(BreadcrumbItem);
+Vue.prototype.$http = Axios;
+Vue.prototype.$moment = moment;
 
-Vue.use(Button);
-Vue.use(Select);
-Vue.use(Radio);
-Vue.use(RadioGroup);
-Vue.use(RadioButton);
+Vue.config.productionTip = false;
 
 new Vue({
   router,

@@ -7,8 +7,11 @@
 <script>
 export default {
   watch: {
-    $route(to) {
-      document.title = to.name || "全维感知综合研判平台";
+    $route: {
+      handler(to) {
+        document.title = to.name || "全维感知综合研判平台";
+      },
+      immediate: true
     }
   }
 };

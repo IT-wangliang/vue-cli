@@ -3,113 +3,6 @@ body {
   height: 100%;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-p,
-blockquote,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-pre,
-form,
-fieldset,
-legend,
-button,
-input,
-textarea,
-th,
-td {
-  margin: 0;
-  padding: 0;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-  font: 12px/1.5tahoma, arial, \5b8b\4f53;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-}
-
-address,
-cite,
-dfn,
-em,
-var {
-  font-style: normal;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: couriernew, courier, monospace;
-}
-
-small {
-  font-size: 12px;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-sup {
-  vertical-align: text-top;
-}
-
-sub {
-  vertical-align: text-bottom;
-}
-
-legend {
-  color: #000;
-}
-
-fieldset,
-img {
-  border: 0;
-}
-
-button,
-input,
-select,
-textarea {
-  font-size: 100%;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 /*默认滚动条样式修改ie9 google Firefox 等高版本浏览器有效*/
 
 ::-webkit-scrollbar-track {
@@ -131,4 +24,121 @@ table {
   width: 4px !important;
   height: 8px !important;
   background: #063c8d !important;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+td,
+th,
+caption {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+i,
+b,
+strong {
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: 14px Verdana, Helvetica, Arial, sans-serif;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
 }

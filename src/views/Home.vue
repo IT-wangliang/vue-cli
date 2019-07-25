@@ -32,15 +32,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#home,
-.routerView {
+#home {
   height: 100%;
 }
-.el-header {
+.routerView {
+  height: calc(100% - 25px);
+  padding: 10px;
   background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 .el-header {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(21, 54, 241, 0.1);
   color: #fff;
 }
 .el-aside {
@@ -49,7 +51,6 @@ export default {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .el-main {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #fff;
+  padding: 0;
 }
 </style>

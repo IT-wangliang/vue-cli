@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api/v1": {
-        target: "http://www.example.org",
+        target: "http://10.12.110.122:8081", //eyes测试环境
         changeOrigin: true,
         ws: true
       }

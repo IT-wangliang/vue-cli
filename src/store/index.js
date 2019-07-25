@@ -1,25 +1,20 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
-import modules from "./modules/index";
-import * as actions from "./actions/index";
-import { state, mutations } from "./modules/index";
 import getters from "./getters";
+
 Vue.use(Vuex);
+
+const modulesFiles = require.context("./modules", true, /\.js$/);
+const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1");
+  const value = modulesFiles(modulePath);
+  modules[moduleName] = value.default;
+  return modules;
+}, {});
+
 const store = new Vuex.Store({
-  state,
-  mutations,
-  actions,
+  modules,
   getters
 });
 
-if (module.hot) {
-  module.hot.accept([modules], () => {
-    const newModules = modules.default;
-    // 加载新模块
-    store.hotUpdate({
-      modules: newModules
-    });
-  });
-}
 export default store;

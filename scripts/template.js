@@ -23,6 +23,9 @@ export default [
   {
     name: "${compoenntName}",
     path: "/${compoenntName}",
+    meta: {
+      icon: "edit"
+    },
     component: lazyLoading("${compoenntName}", true)
   }
 ];`;

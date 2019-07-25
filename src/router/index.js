@@ -5,6 +5,8 @@ import Login from "@/views/Login";
 import NotFound from "@/views/404";
 import Nprogress from "nprogress";
 import "nprogress/nprogress.css";
+import { getStorage } from "../assets/js/util";
+import { Message } from "element-ui";
 Vue.use(Router);
 
 const IndexRoute = {
@@ -52,6 +54,22 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
   Nprogress.start();
+  let login = getStorage("login");
+  let user = getStorage("user");
+  if (login != "true") {
+    if (to.path !== "/login") {
+      next("/login");
+    }
+  } else if (user.permissions && user.permissions.length === 0) {
+    if (to.path !== "/login") {
+      Message({
+        showClose: true,
+        message: "您无权限访问，请联系管理员修改权限！",
+        type: "error"
+      });
+      next("/login");
+    }
+  }
   next();
 });
 

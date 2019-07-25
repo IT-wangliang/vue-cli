@@ -12,7 +12,6 @@
       active-text-color="#fff"
       :collapse="isCollapse"
       :default-active="$route.path"
-      :collapse-transition="true"
     >
       <MenuItem v-for="(val, index) in menuList" :menu="val" :key="index">
       </MenuItem>
@@ -47,6 +46,7 @@ export default {
 <style lang="less" scoped>
 .logo {
   margin-bottom: 10px;
+  margin-top: 10px;
   cursor: pointer;
   text-align: center;
   display: block;
@@ -82,14 +82,7 @@ export default {
       font-size: 18px;
     }
   }
-  .el-menu-item:hover,
-  .el-submenu__title:hover {
-    background: linear-gradient(
-      90deg,
-      rgba(39, 134, 242, 0.4),
-      transparent
-    ) !important;
-  }
+
   .el-submenu {
     .el-menu-item {
       padding-left: 70px !important;
@@ -98,5 +91,20 @@ export default {
   .el-menu--collapse {
     width: 55px;
   }
+}
+.el-menu--popup {
+  .el-menu-item,
+  .el-menu-item {
+    background-color: transparent !important;
+    color: #fff !important;
+  }
+}
+.el-menu-item:hover,
+.el-submenu__title:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(39, 134, 242, 0.4),
+    transparent
+  ) !important;
 }
 </style>
